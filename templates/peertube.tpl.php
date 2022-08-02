@@ -21,7 +21,7 @@
       <article class="video">
         <div class="video-inner">
           <div class="video-miniature">
-            <iframe src="https://peertube.social/videos/embed/<?php echo esc_url($account->host) . '/videos/embed/' . $statut->uuid; ?>" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>
+            <iframe src="<?php echo esc_url($account->host) . '/videos/embed/' . $statut->uuid; ?>" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>
             <!--<a href="<?php echo esc_url($account->host) . '/videos/watch/' . $statut->uuid; ?>" title="<?php echo $statut->name; ?>" class="video-thumbnail" target="_blank" rel="noopener">
               <img src="<?php echo esc_url($account->host) . $statut->previewPath; ?>">
               <div class="video-thumbnail-duration-overlay"><?php echo ($statut->duration > 3600 ? gmdate("g:i:s", $statut->duration) : gmdate("i:s", $statut->duration)); ?></div>
