@@ -1,10 +1,18 @@
 <!-- peertube -->
+<?php
+$host_url = esc_url($account->host);
+
+if ('http' == parse_url($YOUR_URL, PHP_URL_SCHEME)) {
+  $host_url = str_replace('http://', 'https://', $host_url); 
+}
+?>
+
 <div class="fediembedi fediembedi-peertube scrollable" <?php if (!empty($height)) : echo "style='height: $height;'"; endif; ?>>
   <div role="feed">
     <?php if($show_header): ?>
     <div class="peertube-timeline__header">
       <div class="actor">
-        <img class="avatar" alt="Avatar" src="<?php echo esc_url($account->host) . $account->avatar->path; ?>" loading='lazy'>
+        <img class="avatar" alt="Avatar" src="<?php echo $host_url . $account->avatar->path; ?>" loading='lazy'>
         <div class="actor-info">
           <div class="actor-names">
             <a href="<?php echo $account->url; ?>" class="actor-display-link" rel="noreferrer noopener" target="_blank">
@@ -21,14 +29,7 @@
       <article class="video">
         <div class="video-inner">
           <div class="video-miniature">
-            <iframe src="<?php echo esc_url($account->host) . '/videos/embed/' . $statut->uuid; ?>" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>
-            <!--<a href="<?php echo esc_url($account->host) . '/videos/watch/' . $statut->uuid; ?>" title="<?php echo $statut->name; ?>" class="video-thumbnail" target="_blank" rel="noopener">
-              <img src="<?php echo esc_url($account->host) . $statut->previewPath; ?>">
-              <div class="video-thumbnail-duration-overlay"><?php echo ($statut->duration > 3600 ? gmdate("g:i:s", $statut->duration) : gmdate("i:s", $statut->duration)); ?></div>
-              <div class="play-overlay">
-                <div class="icon"></div>
-              </div>
-            </a>-->
+            <iframe src="<?php echo $host_url . '/videos/embed/' . $statut->uuid; ?>" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>
           </div>
           <div class="video-bottom">
             <div class="video-miniature-information">
