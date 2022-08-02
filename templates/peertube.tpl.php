@@ -2,7 +2,7 @@
 <?php
 $host_url = esc_url($account->host);
 
-if ('http' == parse_url($YOUR_URL, PHP_URL_SCHEME)) {
+if ('http' == parse_url($host_url, PHP_URL_SCHEME)) {
   $host_url = str_replace('http://', 'https://', $host_url); 
 }
 ?>
