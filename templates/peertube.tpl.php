@@ -33,7 +33,7 @@ if ('http' == parse_url($host_url, PHP_URL_SCHEME)) {
           </div>
           <div class="video-bottom">
             <div class="video-miniature-information">
-              <a class="video-miniature-name" title="<?php echo $statut->name; ?>" href="<?php echo esc_url($account->host) . '/videos/watch/' . $statut->uuid; ?>"><?php echo $statut->name; ?></a>
+              <a class="video-miniature-name" title="<?php echo $statut->name; ?>" href="<?php echo $host_url . '/videos/watch/' . $statut->uuid; ?>"><?php echo $statut->name; ?></a>
               <div class="video-miniature-created-at-views">
                 <time datetime="<?php echo $statut->publishedAt; ?>"><?php
                 printf( _x( '%1$s ago', '%2$s = human-readable time difference', 'fediembedi' ),
@@ -44,7 +44,7 @@ if ('http' == parse_url($host_url, PHP_URL_SCHEME)) {
                 ?></time>
                 <span class="views"><?php printf( _x( '%1$s views', '%2$s = number of views', 'fediembedi' ), $statut->views); ?></span>
               </div>
-              <!-- <a class="video-miniature-account" href="<?php echo esc_url($account->host) . $account->avatar->path; ?>"><?php echo $statut->account->name; ?></a> -->
+              <!-- <a class="video-miniature-account" href="<?php echo $host_url . $account->avatar->path; ?>"><?php echo $statut->account->name; ?></a> -->
             </div>
           </div>
         </div>
