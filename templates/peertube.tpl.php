@@ -29,7 +29,7 @@ if ('http' == parse_url($host_url, PHP_URL_SCHEME)) {
       <article class="video">
         <div class="video-inner">
           <div class="video-miniature">
-            <iframe src="<?php echo $host_url . '/videos/embed/' . $statut->uuid; ?>" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>
+            <iframe src="<?php echo $host_url . '/videos/embed/' . $statut->uuid . '?warningTitle=0'; ?>" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>
           </div>
           <div class="video-bottom">
             <div class="video-miniature-information">
