@@ -43,7 +43,6 @@ if ('http' == parse_url($host_url, PHP_URL_SCHEME)) {
                 );
                 ?></time>
               </div>
-              <!-- <a class="video-miniature-account" href="<?php echo $host_url . $account->avatar->path; ?>"><?php echo $statut->account->name; ?></a> -->
             </div>
           </div>
         </div>
